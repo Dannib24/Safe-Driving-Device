@@ -1,0 +1,4 @@
+timestamp,event_type,speed,distance,deceleration,reason
+2026-05-18 10:00:00,Normal,18,150,-1.1,Smooth braking
+2026-05-18 10:01:00,Emergency,24,25,-4.2,Object detected close ahead
+2026-05-18 10:02:00,Reckless,40,200,-5.0,Hard braking without nearby obstacle

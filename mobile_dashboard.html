@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Driving Device Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 18px;
+    }
+
+    .card {
+      background: #111827;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid #334155;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .status {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #22c55e;
+      margin: 20px 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .metric {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .label {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .value {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .message {
+      margin-top: 20px;
+      background: #052e16;
+      border: 1px solid #22c55e;
+      color: #bbf7d0;
+      padding: 15px;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>SAFE DRIVING DEVICE</h1>
+    <div class="subtitle">Real-Time Braking Classification Dashboard</div>
+
+    <div class="status">NORMAL DRIVING</div>
+
+    <div class="grid">
+      <div class="metric">
+        <div class="label">Risk Level</div>
+        <div class="value">LOW</div>
+      </div>
+
+      <div class="metric">
+        <div class="label">Vehicle Speed</div>
+        <div class="value">35 mph</div>
+      </div>
+
+      <div class="metric">
+        <div class="label">Obstacle Distance</div>
+        <div class="value">180 cm</div>
+      </div>
+
+      <div class="metric">
+        <div class="label">Deceleration</div>
+        <div class="value">1.2 m/s²</div>
+      </div>
+
+      <div class="metric">
+        <div class="label">GPS Coordinates</div>
+        <div class="value" style="font-size:16px;">41.6105, -87.7210</div>
+      </div>
+
+      <div class="metric">
+        <div class="label">CSV Logging</div>
+        <div class="value">Active</div>
+      </div>
+    </div>
+
+    <div class="message">
+      Normal driving behavior detected.
+    </div>
+
+    <div class="footer">
+      Simulated dashboard output · Raspberry Pi Prototype · Sensor Fusion Verification
+    </div>
+  </div>
+
+</body>
+</html>

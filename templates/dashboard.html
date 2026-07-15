@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safe Driving Device Dashboard</title>
+    <meta http-equiv="refresh" content="3">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .status {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .high {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .low {
+            color: green;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+
+        .empty {
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Safe Driving Device Dashboard</h1>
+
+    <div class="card">
+        <h2>Current Status</h2>
+
+        {% if latest_event %}
+            <p class="status {{ latest_event['risk_level'] }}">
+                Latest Event: {{ latest_event['event'] }}
+            </p>
+
+            <p><strong>Time:</strong> {{ latest_event['timestamp'] }}</p>
+            <p><strong>Risk Level:</strong> {{ latest_event['risk_level'] }}</p>
+            <p><strong>Speed:</strong> {{ latest_event['speed_mph'] }} mph</p>
+            <p><strong>Distance:</strong> {{ latest_event['distance_cm'] }} cm</p>
+            <p><strong>Braking Force:</strong> {{ latest_event['braking_force'] }}</p>
+            <p><strong>Message:</strong> {{ latest_event['message'] }}</p>
+        {% else %}
+            <p class="empty">No events recorded yet.</p>
+        {% endif %}
+    </div>
+
+    <div class="card">
+        <h2>Recent Events</h2>
+
+        {% if recent_events %}
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Risk</th>
+                    <th>Speed</th>
+                    <th>Distance</th>
+                    <th>Braking Force</th>
+                    <th>Message</th>
+                </tr>
+
+                {% for event in recent_events %}
+                <tr>
+                    <td>{{ event['timestamp'] }}</td>
+                    <td>{{ event['event'] }}</td>
+                    <td>{{ event['risk_level'] }}</td>
+                    <td>{{ event['speed_mph'] }}</td>
+                    <td>{{ event['distance_cm'] }}</td>
+                    <td>{{ event['braking_force'] }}</td>
+                    <td>{{ event['message'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p class="empty">No recent events available.</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

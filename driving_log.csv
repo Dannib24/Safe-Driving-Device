@@ -1,0 +1,2 @@
+timestamp,event,risk_level,braking_force,speed_mph,distance_cm,message
+2026-05-18 17:20:33,hard_braking,high,0.52,35,28,Hard braking detected near object
